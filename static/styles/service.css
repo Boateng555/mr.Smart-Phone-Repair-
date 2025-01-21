@@ -1,0 +1,70 @@
+.top img{
+  width: 100%;
+  height: auto;
+  margin-top: -59px;
+}
+
+
+/*----------- Kontakt------------*/
+
+.contact{
+  text-align: center;
+  margin: 20px 150px;
+}
+
+.contact h3{
+  font-weight: normal;
+  font-size: 14px;
+  text-align: left;
+}
+
+input{
+  width: 100%;
+  margin: 2px 0;
+  border: solid;
+  border-width: 1px;
+  border-radius: 3px;
+  border-color: rgb(136, 191, 217);
+  outline: none;
+  padding: 6px 7px;
+  font-size: 12px;
+}
+.contactTitle{
+  margin-bottom: 20px;
+}
+.contactTitle p{
+  color: rgb(64, 131, 154);
+}
+.name, .email, .subject, .message{
+  margin-bottom: 15px;
+}
+
+.message input{
+  padding: 30px 7px;
+  text-align: left ;
+}
+
+.sendC{
+  background: rgb(33, 98, 120);
+  color: white;
+  border: solid;
+  border-color: rgb(33, 98, 120);
+  border-radius: 5px;
+  padding: 8px 15px;
+  cursor: pointer;
+  margin-bottom: 25px;
+}
+
+
+
+
+
+/*------media query for less than 600 screen size ------*/
+
+@media only screen and (max-width: 600px){
+  .contact, input, .contact h3{
+  text-align: center;
+  margin: 0 5px;
+  width: auto;
+  }
+}

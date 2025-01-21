@@ -1,0 +1,93 @@
+#payment-info {
+  margin: 20px;
+  padding: 20px;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+#payment-info label, #payment-info input {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  font-size: 14px;
+  outline: none;
+}
+
+#payment-info input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#payment-info p {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+#payment-info button {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  background: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+#payment-info button:hover {
+  background: #555;
+}
+
+
+
+/* Default styles for larger screens */
+.nav-right {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+/* Hamburger menu icon for small screens */
+.menu-icon {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .nav-right {
+    display: none; /* Hide the navigation links initially */
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background: rgb(117, 107, 107);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    width: 150px;
+  }
+
+  .menu-icon {
+    display: block; /* Show the hamburger icon on small screens */
+  }
+
+  .nav-right a {
+    margin-bottom: 10px;
+  }
+
+  .nav-right.active {
+    display: flex; /* Show the menu when active */
+  }
+}

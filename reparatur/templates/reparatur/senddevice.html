@@ -1,0 +1,167 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Send device</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="{% static 'styles/index.css' %}">
+  <link rel="stylesheet" href="{% static 'styles/senddevice.css' %}">
+</head>
+<body>
+  <div class="header">
+    <div class="navbar">
+      <div class="logo">
+        <a href="{% url 'info' %}"><img src="{% static 'assets/images/MrSmartRepair.JPG' %}" width="150px" height="40px"></a>
+      </div>
+
+      <nav>
+        <ul id="MenuItems">
+          <li><a href="{% url 'info' %}">HOME</a></li>
+          <li><a href="{% url 'reparatur' %}">REPARATUREN</a></li>
+          <li><a href="{% url 'send_device' %}" class="send">GERÄT EINSENDEN</a></li>
+          <li><a href="{% url 'onlineshop' %}" class="onlineS">ONLINESHOP</a></li>
+        </ul>
+      </nav>
+      
+      <img src="{% static 'assets/images/icons/menu.png' %}" class="menu-icon" onclick="menutoggle()">
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="titleImg">
+        <h1>Gerät zur Reparatur einsenden</h1>
+      </div>
+      
+      <div class="titleImg">
+        <img src="{% static 'assets/images/repair.png' %}">
+      </div>
+    </div>
+  </div>
+
+  <!-- Überblick-Abschnitt -->
+  <form id="repairForm" method="post" action="{% url 'submit_repair_request' %}">
+    {% csrf_token %}
+    <!-- Geräteauswahl -->
+    <label for="deviceType">Gerätetyp:</label>
+    <select id="deviceType" name="device_type" required>
+        <option value="">Gerätetyp wählen</option>
+        <option value="Handy">Handy</option>
+        <option value="Tablet">Tablet</option>
+        <option value="Laptop">Laptop</option>
+    </select>
+  
+    <!-- Schadensart -->
+    <label for="damageType">Schadensart:</label>
+    <select id="damageType" name="damage_type" required>
+        <option value="">Schadensart wählen</option>
+        <option value="Display-Schaden">Display-Schaden</option>
+        <option value="Batterieproblem">Batterieproblem</option>
+        <option value="Wasserschaden">Wasserschaden</option>
+        <option value="Rückseite">Rückseite</option>
+        <option value="Kameraglas">Kameraglas</option>
+        <option value="Hörmuschel">Hörmuschel</option>
+        <option value="Ladebuchse">Ladebuchse</option>
+        <option value="Front Kamera">Front Kamera</option>
+        <option value="Power Button">Power Button</option>
+        <option value="Andere">Andere</option>
+    </select>
+  
+    <!-- Schadenbeschreibung -->
+    <label for="damageDescription">Schaden beschreiben:</label>
+    <textarea id="damageDescription" name="damage_description" placeholder="Beschreiben Sie das Problem" required></textarea>
+  
+    <!-- Kontaktdetails -->
+    <h3>Kontaktdetails</h3>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+  
+    <label for="email">E-Mail:</label>
+    <input type="email" id="email" name="email" required>
+  
+    <label for="phone">Telefonnummer:</label>
+    <input type="tel" id="phone" name="phone" required>
+  
+    <!-- Zahlungsmethode -->
+    <h3>Zahlungsmethode</h3>
+    <label for="paymentMethod">Wählen Sie eine Zahlungsmethode:</label>
+    <select id="paymentMethod" name="payment_method" required>
+        <option value="">Zahlungsmethode wählen</option>
+        <option value="Kreditkarte">Kreditkarte</option>
+        <option value="PayPal">PayPal</option>
+        <option value="Überweisung">Überweisung</option>
+    </select>
+  
+    <!-- Abschicken-Button -->
+    <button type="submit">Reparaturanfrage absenden</button>
+  </form>
+
+  <!------ Branches ------->
+  <div class="branches">
+    <div class="filialen">FELIALEN</div>
+  
+    <div class="branch">
+      <div class="locationN">STANDORT 1</div>
+      <div><a href="" class="address">Berner Heerweg 173-175, <br>22159 Hamburg</a></div>
+      <div><a href="" class="phoneN">Tel: +49 40 64534414</a></div>
+      <div class="timeNdays">Montag - Samstag <br>10&#58;00 bis 19&#58;00 Uhr</div>
+    </div>
+
+    <div class="branch">
+      <div class="locationN">STANDORT 2</div>
+      <div><a href="" class="address">Überseeplatz 4, <br>20457 Hmaburg</a></div>
+      <div><a href="" class="phoneN">Tel: +49 40 83504418</a></div>
+      <div class="timeNdays">Montag - Samstag <br>10&#58;00 bis 20&#58;00 Uhr</div>
+    </div>
+
+    <div class="map">
+      <div class="loc1">
+        <a href="https://www.google.com/search?client=firefox-b-d&q=Berner+Heerweg+173-175%2C+22159+Hamburg"><img src="{% static 'assets/Images/berner.png'%}" width="100%"></a>
+      </div>
+      <div class="loc2">
+        <a href="https://www.google.com/search?client=firefox-b-d&q=%C3%9Cberseeplatz+4%2C+20457+Hmaburg"><img src="{% static 'assets/Images/übersee.png'%}" width="100%"></a>
+      </div>
+    </div>
+  </div>
+
+  <!----- footer ----->  
+  <div class="footer">
+      <div class="row">
+        <div class="footer-col-1">
+          <h3>Kontakt</h3>
+          <p><img src="{% static 'assets/images/icons/call.png'%}">&nbsp;&nbsp;&nbsp; +49 40 64534414</p>
+          <p><img src="{% static 'assets/images/icons/mail.png'%}">&nbsp;&nbsp;&nbsp; info@mrsmartphonerepair.de</p>
+          <p><img src="{% static 'assets/images/icons/location.png'%}">&nbsp;&nbsp;&nbsp; Berner Heerweg 173-175 
+            <br> 22159, Hamburg</p>
+        </div>
+        <div class="footer-col-2">
+          <h3>ÜBER UNS</h3>
+          <ul>
+            <li><a href="homepagelinks/Impressum.html">Impressum</a></li>
+            <li><a href="homepagelinks/AGB.html">AGB</a></li>
+            <li><a href="homepagelinks/datenschutzerklärung.html">Datenschutz</a></li>
+          </ul>
+        </div>
+        <div class="footer-col-2">
+          <h3>Follow us</h3>
+          <ul>
+            <a href=""><li>Instagram</li></a>
+            <a href=""><li>Twitter</li></a>
+            <a href=""><li>YouTube</li></a>
+          </ul>
+        </div>
+      </div>
+      <hr>
+      <p class="copyright">&copy; 2024 Mr. Smart Repair. Alle Rechte vorbehalten.</p>
+  </div>
+
+  <!--------------- js for toggle menu ------------>
+  <script src="{% static 'scripts/index.js' %}"></script>
+  <script src="{% static 'scripts/senddevice.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+{% load static %}
+{% load cart_extras %}  <!-- Load the custom filter here -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart</title>
+  <link rel="stylesheet" href="{% static 'styles/cart.css' %}">
+</head>
+<body>
+  <h1>Your Cart</h1>
+  <div id="cart-container">
+    {% for product_id, quantity in request.session.cart.items %}
+      {% with product=product_id|get_product %}
+        <div class="cart-item">
+          <img src="{{ product.image.url }}" alt="{{ product.name }}">
+          <div class="details">
+            <h3>{{ product.name }}</h3>
+            <p>Price: €{{ product.price }}</p>
+          </div>
+          <div class="actions">
+            <form action="{% url 'cart_update' product.id %}" method="post">
+              {% csrf_token %}
+              <input type="number" name="quantity" value="{{ quantity }}" min="1">
+              <button type="submit">Update</button>
+            </form>
+            <a href="{% url 'cart_delete' product.id %}">
+              <button>Remove</button>
+            </a>
+          </div>
+        </div>
+      {% endwith %}
+    {% endfor %}
+  </div>
+
+  <div id="cart-summary">
+    <p>Subtotal: <span id="subtotal">€{{ subtotal }}</span></p>
+    <p>Delivery: <span id="delivery-fee">€{{ delivery_fee }}</span></p>
+    <p>Total: <span id="total">€{{ total }}</span></p>
+    <button onclick="window.location.href='{% url 'checkout' %}'">Checkout</button>
+</div>
+</body>
+</html>

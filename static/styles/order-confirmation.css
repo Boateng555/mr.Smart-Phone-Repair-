@@ -1,0 +1,54 @@
+#order-confirmation {
+  margin: 20px;
+  padding: 20px;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  text-align: center;
+}
+
+#order-confirmation h1 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+#order-confirmation p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+#order-summary {
+  margin: 20px 0;
+  text-align: left;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: #f9f9f9;
+}
+
+#order-summary div {
+  margin-bottom: 10px;
+}
+
+#shipping-details {
+  margin: 20px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: #f9f9f9;
+}
+
+#order-confirmation button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#order-confirmation button:hover {
+  background: #555;
+}

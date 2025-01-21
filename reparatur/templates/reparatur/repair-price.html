@@ -1,0 +1,116 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Repair Price - Mr. Smartphone Repair</title>
+  <link rel="stylesheet" href="{% static 'styles/index.css' %}">
+  <link rel="stylesheet" href="{% static 'styles/repair-price.css' %}">
+</head>
+<body>
+  <div class="header">
+    <div class="navbar">
+      <div class="logo">
+        <a href="{% url 'info' %}"><img src="{% static 'assets/Images/MrSmartRepair.JPG'%}" width="150px" height="40px"></a>
+      </div>
+
+      <nav>
+        <ul id="MenuItems">
+          <li><a href="{% url 'info' %}">HOME</a></li>
+          <li class="reparatur-link">
+            <a href="{% url 'reparatur' %}">REPARATUREN</a>
+            <div class="reparatur-popup">
+              <a href="{% url 'repair_price' %}?category=iPhone">iPhone</a>
+              <a href="{% url 'repair_price' %}?category=Android">Android</a>
+              <a href="{% url 'repair_price' %}?category=Tablet">Tablet</a>
+              <a href="{% url 'repair_price' %}?category=Laptop">Laptop</a>
+            </div>
+          </li>
+          <li><a href="{% url 'send_device' %}" class="send">GERÄT EINSENDEN</a></li>
+          <li><a href="{% url 'onlineshop' %}" class="onlineS">ONLINESHOP</a></li>
+        </ul>
+      </nav>
+      
+      <img src="{% static 'assets/Images/icons/menu.png'%}" class="menu-icon" onclick="menutoggle()">
+    </div>
+  </div>
+
+  <div class="repair-price-container">
+    <h1>Reparaturpreise</h1>
+    <div class="device-category">
+      <h2>Apple Watch</h2>
+      <div class="repair-option">
+        <h3>Apple Watch Series 4</h3>
+        <div class="option">
+          <p class="price">279,00 €</p>
+          <p class="title">Justcorn Standard Display</p>
+          <p class="description">Gronigales Display</p>
+        </div>
+        <div class="option">
+          <p class="price">488,99 €</p>
+          <p class="title">Apple Original Display</p>
+          <p class="description">Original Apple Display</p>
+        </div>
+        <div class="option">
+          <p class="price">129,00 €</p>
+          <p class="title">Apple Original Akku</p>
+          <p class="description">Original Apple Akku</p>
+        </div>
+      </div>
+
+      <div class="repair-option">
+        <h3>Apple Watch Series 3</h3>
+        <div class="option">
+          <p class="price">249,00 €</p>
+          <p class="title">Justcorn Standard Display</p>
+          <p class="description">Gronigales Display</p>
+        </div>
+        <div class="option">
+          <p class="price">459,99 €</p>
+          <p class="title">Apple Original Display</p>
+          <p class="description">Original Apple Display</p>
+        </div>
+        <div class="option">
+          <p class="price">119,00 €</p>
+          <p class="title">Apple Original Akku</p>
+          <p class="description">Original Apple Akku</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!----- footer ----->  
+  <div class="footer">
+    <div class="row">
+      <div class="footer-col-1">
+        <h3>Kontakt</h3>
+        <p><img src="{% static 'assets/images/icons/call.png'%}">&nbsp;&nbsp;&nbsp; +49 40 64534414</p>
+        <p><img src="{% static 'assets/images/icons/mail.png'%}">&nbsp;&nbsp;&nbsp; info@mrsmartphonerepair.de</p>
+        <p><img src="{% static 'assets/images/icons/location.png'%}">&nbsp;&nbsp;&nbsp; Berner Heerweg 173-175 
+          <br> 22159, Hamburg</p>
+      </div>
+      <div class="footer-col-2">
+        <h3>ÜBER UNS</h3>
+        <ul>
+          <li><a href="homepagelinks/Impressum.html">Impressum</a></li>
+          <li><a href="homepagelinks/AGB.html">AGB</a></li>
+          <li><a href="homepagelinks/datenschutzerklärung.html">Datenschutz</a></li>
+        </ul>
+      </div>
+      <div class="footer-col-2">
+        <h3>Follow us</h3>
+        <ul>
+          <a href=""><li>Instagram</li></a>
+          <a href=""><li>Twitter</li></a>
+          <a href=""><li>YouTube</li></a>
+        </ul>
+      </div>
+    </div>
+    <hr>
+    <p class="copyright">&copy; 2024 Mr. Smart Repair. Alle Rechte vorbehalten.</p>
+  </div>
+
+  <script src="{% static 'scripts/index.js' %}"></script>
+</body>
+</html>

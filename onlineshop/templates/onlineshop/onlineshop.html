@@ -1,0 +1,102 @@
+<!-- onlineshop.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Shop</title>
+  <link rel="stylesheet" href="{% static 'styles/onlineshop.css' %}">
+  <link rel="stylesheet" href="{% static 'styles/reset.css' %}">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="{% url 'info' %}"><img src="{% static 'assets/Images/MrSmartRepair.JPG' %}" alt="Logo" /></a>
+      </div>
+      <div class="search-bar">
+        <input type="text" id="search-input" placeholder="Produkte suchen..." onkeyup="filterProducts()">
+        <button onclick="filterProducts()">Suche</button>
+      </div>
+      <div class="menu-icon" id="menu-icon" onclick="toggleMenu()">&#9776;</div>
+      <div class="nav-right">
+        <div class="login-register">
+        </div>
+        <div class="cart">
+          <a href="{% url 'cart' %}">Warenkorb</a>
+          <li><a href="{% url 'info' %}">HOME</a></li>
+          <li><a href="{% url 'reparatur' %}">REPARATUREN</a></li>
+          <li><a href="{% url 'send_device' %}" class="send">GERÄT EINSENDEN</a></li>
+          <li><a href="{% url 'onlineshop' %}" class="onlineS">ONLINESHOP</a></li>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <nav>
+  
+
+  <!-- Main Content -->
+  <main>
+    {% for category, products in products_by_category.items %}
+      <h3>{{ category }}</h3>
+      <div id="product-list">
+        {% for product in products %}
+          <div class="product-item">
+            <div class="item-img">
+              <img src="{{ product.image.url }}" alt="{{ product.name }}">
+            </div>
+            <div class="item-name">
+              <h1>{{ product.name }}</h1>
+            </div>
+            <div class="item-desc">
+              <p>{{ product.description }}</p>
+            </div>
+            <div class="item-price">
+              <p>Price: €{{ product.price }}</p>
+            </div>
+            <div class="item-btn">
+              <a href="{% url 'cart_add' product.id %}">
+                <button>Add to Cart</button>
+              </a>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    {% endfor %}
+  </main>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div class="row">
+      <div class="footer-col-1">
+        <h3>Kontakt</h3>
+        <p><img src="{% static 'assets/Images/icons/call.png' %}">&nbsp;&nbsp;&nbsp; +49 40 64534414</p>
+        <p><img src="{% static 'assets/Images/icons/mail.png' %}">&nbsp;&nbsp;&nbsp; info@mrsmartphonerepair.de</p>
+        <p><img src="{% static 'assets/Images/icons/location.png' %}">&nbsp;&nbsp;&nbsp; Berner Heerweg 173-175 <br> 22159, Hamburg</p>
+      </div>
+      <div class="footer-col-2">
+        <h3>ÜBER UNS</h3>
+        <ul>
+          <li><a href="homepagelinks/Impressum.html">Impressum</a></li>
+          <li><a href="homepagelinks/AGB.html">AGB</a></li>
+          <li><a href="homepagelinks/datenschutzerklärung.html">Datenschutz</a></li>
+        </ul>
+      </div>
+      <div class="footer-col-3">
+        <h3>Follow us</h3>
+        <ul>
+          <a href="#"><li>Instagram</li></a>
+          <a href="#"><li>Twitter</li></a>
+          <a href="#"><li>YouTube</li></a>
+        </ul>
+      </div>
+    </div>
+    <hr>
+    <p class="copyright">&copy; 2024 Mr. Smart Repair. Alle Rechte vorbehalten.</p>
+  </div>
+
+  <script src="{% static 'scripts/onlineshop.js' %}"></script>
+</body>
+</html>

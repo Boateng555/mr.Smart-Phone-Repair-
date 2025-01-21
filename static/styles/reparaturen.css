@@ -1,0 +1,59 @@
+/* Customer Information Section */
+.customer-info {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+  }
+  
+  .customer-info h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .info-section {
+    margin-bottom: 30px;
+  }
+  
+  .info-section h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #555;
+  }
+  
+  .info-section p {
+    font-size: 16px;
+    color: #777;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  /* Service Details Section */
+  .service-details {
+    padding: 40px 20px;
+    background-color: #fff;
+    text-align: center;
+  }
+  
+  .service-details h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .details-section {
+    margin-bottom: 30px;
+  }
+  
+  .details-section h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #555;
+  }
+  
+  .details-section p {
+    font-size: 16px;
+    color: #777;
+    max-width: 600px;
+    margin: 0 auto;
+  }

@@ -1,0 +1,85 @@
+#return-section {
+  margin: 20px;
+  padding: 20px;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+#return-section h1 {
+  font-size: 28px;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#items-container {
+  margin-top: 20px;
+}
+
+.return-item {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.return-item input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+#return-status {
+  margin-top: 20px;
+  color: green;
+  font-weight: bold;
+  text-align: center;
+}
+
+
+/* Default styles for larger screens */
+.nav-right {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+/* Hamburger menu icon for small screens */
+.menu-icon {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .nav-right {
+    display: none; /* Hide the navigation links initially */
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background: rgb(117, 107, 107);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    width: 150px;
+  }
+
+  .menu-icon {
+    display: block; /* Show the hamburger icon on small screens */
+  }
+
+  .nav-right a {
+    margin-bottom: 10px;
+  }
+
+  .nav-right.active {
+    display: flex; /* Show the menu when active */
+  }
+}

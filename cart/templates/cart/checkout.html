@@ -1,0 +1,74 @@
+{% load static %}
+{% load cart_extras %}
+{% load cart_filters %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout</title>
+  <link rel="stylesheet" href="{% static 'styles/onlineshop.css' %}">
+  <link rel="stylesheet" href="{% static 'styles/checkout.css' %}">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="{% url 'cart' %}"><img src="{% static 'assets/Images/MrSmartRepair.JPG' %}" alt="Logo" /></a>
+      </div>
+      <div class="nav-right">
+        <a href="{% url 'cart' %}">Warenkorb</a>
+        <a href="{% url 'konto' %}">Login / Register</a>
+      </div>
+      <div class="menu-icon" onclick="toggleMenu()">
+        &#9776;
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Checkout</h1>
+
+    <!-- Customer Information Section -->
+    <section id="customer-info">
+      <h2>Versand-Details</h2>
+      <form id="checkout-form" method="post" action="{% url 'checkout' %}">
+        {% csrf_token %}
+        <label for="name">Name und Vorname</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">E-Mail Adresse</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="address">Lieferadresse</label>
+        <textarea id="address" name="address" rows="3" required></textarea>
+
+        <label for="phone">Rufnummer</label>
+        <input type="tel" id="phone" name="phone" required>
+      </form>
+    </section>
+
+    <!-- Order Summary Section -->
+    <section id="order-summary">
+      <h2>Zusammenfassung der Bestellung</h2>
+      <div id="summary-container">
+        {% for item in cart_items %}
+          <div class="cart-item">
+            <p>{{ item.name }} - ${{ item.price }}</p>
+          </div>
+        {% endfor %}
+      </div>
+      <p>Zwischensumme: <span id="subtotal">${{ subtotal }}</span></p>
+      <p>Liefergebühr: <span id="delivery-fee">${{ delivery_fee }}</span></p>
+      <p>Insgesamt: <span id="total">${{ total }}</span></p>
+    </section>
+
+    <!-- Place Order Section -->
+    <section id="place-order">
+      <button onclick="window.location.href='{% url 'payment' %}'">Zur Zahlung gehen</button>
+    </section>
+  </main>
+
+  <script src="{% static 'scripts/checkout.js' %}"></script>
+</body>
+</html>

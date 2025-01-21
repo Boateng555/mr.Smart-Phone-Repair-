@@ -1,0 +1,57 @@
+#tracking-section {
+  margin: 20px;
+  padding: 20px;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  text-align: center;
+}
+
+#tracking-section h1 {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+#tracking-input {
+  margin: 20px auto;
+  max-width: 400px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#tracking-input input {
+  padding: 10px;
+  font-size: 16px;
+  flex: 1;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+#tracking-input button {
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#tracking-input button:hover {
+  background-color: #555;
+}
+
+#tracking-result {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+#tracking-result p {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.5;
+}
