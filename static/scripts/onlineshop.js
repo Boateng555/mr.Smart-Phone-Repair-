@@ -21,3 +21,8 @@ function filterProducts() {
     }
   });
 }
+
+function toggleMenu() {
+  const navRight = document.getElementById('nav-right');
+  navRight.classList.toggle('active');
+}
