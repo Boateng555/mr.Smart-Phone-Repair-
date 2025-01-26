@@ -21,16 +21,12 @@
         <button onclick="filterProducts()">Suche</button>
       </div>
       <div class="menu-icon" id="menu-icon" onclick="toggleMenu()">&#9776;</div>
-      <div class="nav-right">
-        <div class="login-register">
-        </div>
-        <div class="cart">
-          <a href="{% url 'cart' %}">Warenkorb</a>
+      <div class="nav-right" id="nav-right">
+          <a href="{% url 'cart' %}">WARENKORB</a>
           <li><a href="{% url 'info' %}">HOME</a></li>
           <li><a href="{% url 'reparatur' %}">REPARATUREN</a></li>
           <li><a href="{% url 'send_device' %}" class="send">GERÄT EINSENDEN</a></li>
           <li><a href="{% url 'onlineshop' %}" class="onlineS">ONLINESHOP</a></li>
-        </div>
       </div>
     </nav>
   </header>
