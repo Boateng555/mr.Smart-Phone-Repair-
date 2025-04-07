@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Repair Price List</title>
+  <link rel="stylesheet" href="{% static 'styles/repair-price.css' %}">
+</head>
+<body>
+  <header>
+    <h1>Preisliste für Telefonreparaturen</h1>
+  </header>
+  <main>
+    <table id="price-table">
+      <thead>
+        <tr>
+          <th>Hersteller / Modell</th>
+          <th>Display</th>
+          <th>Rückseite</th>
+          <th>Akku</th>
+          <th>Kameraglas</th>
+          <th>Kamera</th>
+          <th>Hörmuschel</th>
+          <th>Ladebuchse</th>
+          <th>Front Kamera</th>
+          <th>Power Button</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Rows will be populated dynamically with JavaScript -->
+      </tbody>
+    </table>
+  </main>
+  <footer>
+    <p>&copy; 2024 Mr. Smart. Alle Rechte vorbehalten.</p>
+  </footer>
+  <script src="{% static 'scripts/repair-price.js' %}"></script>
+</body>
+</html>

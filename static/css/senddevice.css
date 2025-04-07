@@ -1,0 +1,187 @@
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+ 
+  color: #333;
+  background-color: #f9f9f9;
+}
+
+.overview {
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 60px;
+}
+.overview h1{
+  font-weight: bold;
+  font-size: 30px;
+  color: #9a0505;
+}
+
+.steps {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+  margin-top: 30px;
+}
+
+.step {
+  width: 30%;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #e94444;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #9a0505;
+}
+
+.repair-form {
+  max-width: 500px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.hidden {
+  display: none;
+}
+
+form label {
+  display: block;
+  margin-top: 10px;
+}
+
+form input, form select, form textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+}
+
+/*----- footer -----*/
+.footer {
+  width: 100%; /* Ensure the footer spans the entire width */
+  background-color: #333; /* Set the desired background color */
+  color: white; /* Set text color for contrast */
+  padding: 20px 0; /* Add padding for spacing */
+  box-sizing: border-box; /* Include padding in the element's total width/height */
+}
+
+.footer .row {
+  display: flex; /* Use flexbox for layout */
+  justify-content: space-between; /* Spread the footer content */
+  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+  max-width: 1200px; /* Optional: set a max-width to keep content centered */
+  margin: 0 auto; /* Center the footer content */
+  padding: 0 15px; /* Add some horizontal padding */
+}
+
+.footer-col-1,
+.footer-col-2 {
+  flex: 1; /* Make each column take an equal share */
+  margin: 10px; /* Add spacing between columns */
+  min-width: 200px; /* Set a minimum width for each column */
+}
+
+.footer-col-1 h3,
+.footer-col-2 h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer ul li {
+  margin-bottom: 5px;
+}
+
+.footer ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer ul li a:hover {
+  text-decoration: underline;
+}
+
+.footer hr {
+  border: none;
+  border-top: 1px solid #555;
+  margin: 20px 0;
+}
+
+.copyright {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #aaa;
+}
+
+@media only screen and (max-width: 600px) {
+  .footer .row {
+      flex-direction: column; /* Stack columns vertically on small screens */
+      text-align: center; /* Center-align text for a better layout */
+  }
+
+  .footer-col-1,
+  .footer-col-2 {
+      margin: 0 auto; /* Center columns on small screens */
+      min-width: 100%; /* Ensure full width for smaller columns */
+  }
+}
+
+
+
+
+
+
+@media only screen and (max-width: 600px){
+  .steps{
+  text-align: left;
+  margin: 0;
+  width: auto;
+  display: flex;
+  flex-wrap: wrap;
+  }
+}
+
+/*
+@media (max-width: 480px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .container .row {
+    flex-direction: column;
+  }
+
+  .overview h1, .titleImg h1 {
+    font-size: 24px;
+  }
+
+  .footer h3 {
+    font-size: 16px;
+  }
+}
+*/

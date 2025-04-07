@@ -1,0 +1,553 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  padding-top: 60px;
+}
+
+.navbar {
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  padding: 10px 35px;
+  background: #e0f7ff; /* Light blue background */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+nav {
+  flex: 1;
+  text-align: center;
+}
+
+nav ul {
+  display: inline-block;
+  list-style-type: none;
+}
+
+nav ul li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: #555;
+}
+
+p {
+  color: #555;
+}
+
+.container {
+  font-size: 500;
+  padding: 10px 25px;
+  background: #f0faff; /* Light blue background */
+  margin: auto;
+  max-width: 13000px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.titleImg {
+  flex-basis: 50%;
+  min-width: 300px;
+}
+
+.titleImg img {
+  max-width: 100%;
+  padding: 50px 0;
+}
+
+.titleImg h1 {
+  font-size: 40px;
+  line-height: 60px;
+  margin: 25px 0;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #4d8ad0; /* Light blue button */
+  color: white;
+  padding: 8px 30px;
+  margin: 30px 0;
+  border-radius: 30px;
+  transition: background 0.5s;
+}
+
+.btn:hover {
+  background: #1759a0; /* Darker blue on hover */
+}
+
+.header {
+  background: radial-gradient(#fff, #e0f7ff); /* Light blue gradient */
+  z-index: 999;
+}
+
+.header .row {
+  margin-top: 70px;
+}
+
+.small-container {
+  max-width: 1080px;
+  margin: auto;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.title {
+  text-align: center;
+  margin: 0 auto 80px;
+  position: relative;
+  line-height: 60px;
+  color: #555;
+}
+
+.title::after {
+  content: '';
+  background: #4d8ad0; /* Light blue underline */
+  width: 80px;
+  height: 5px;
+  border-radius: 5px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.send, .onlineS {
+  background: #4d8ad0; /* Light blue background */
+  color: white;
+  padding: 7px 5px;
+}
+
+/*----- Unsere Services -----*/
+
+.service {
+  max-width: 13000px;
+  margin: auto;
+  margin-top: 40px;
+  padding: 10px 25px;
+}
+
+.service .servTitle {
+  text-align: center;
+}
+
+.service .servTitle h2 {
+  color: #4d8ad0; /* Light blue text */
+}
+
+.service .servTitle h3 {
+  font-size: 15px;
+  color: #555;
+}
+
+.serv-hr hr {
+  border: none;
+  background: #4d8ad0; /* Light blue line */
+  height: 1.5px;
+  margin: 40px 25px;
+}
+
+.serv-grid {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  margin: 0 25px;
+}
+
+.serv-grid p {
+  font-size: 13px;
+}
+
+.i-smartP, .tablet-ipad, .noteNMacB, .headset {
+  text-align: center;
+}
+
+.i-smartP img, .tablet-ipad img, .noteNMacB img, .headset img {
+  border: solid;
+  border-width: 2px;
+  border-radius: 20px;
+  border-color: #4d8ad0; /* Light blue border */
+}
+
+/*----- Handy-Reparatur ----*/
+.angebot {
+  background: radial-gradient(#fff, #e0f7ff); /* Light blue gradient */
+  margin-top: 30px;
+  padding: 30px 0;
+}
+
+.row-1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.col-2 .angebot-img {
+  padding: 30px;
+  width: 100%;
+  height: auto;
+  flex: 1;
+}
+
+small {
+  color: #555;
+  font-size: 10px;
+}
+
+.handy-btn {
+  text-align: center;
+}
+
+/*------ Branches ------*/
+.branches {
+  margin: 50px;
+  text-align: center;
+}
+
+.filialen {
+  font-weight: bold;
+  font-size: 30px;
+  margin: 20px auto;
+}
+
+.branch {
+  display: inline-block;
+  margin: 5px 40px;
+  padding: 5px 15px;
+  text-align: center;
+  align-items: center;
+  border: solid;
+  border-color: #4d8ad0; /* Light blue border */
+  border-radius: 15px;
+  margin-bottom: 80px;
+}
+
+.locationN {
+  font-weight: bold;
+  color: #4d8ad0; /* Light blue text */
+  margin: 5px auto;
+}
+
+.address {
+  margin-bottom: 5px;
+}
+
+.phoneN {
+  margin-bottom: 5px;
+  color: #4d8ad0; /* Light blue text */
+}
+
+.map {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.loc1 {
+  margin-right: 10px;
+}
+
+.loc2 {
+  margin-left: 10px;
+}
+
+/*----- footer -----*/
+.footer {
+  background: #000;
+  color: #8a8a8a;
+  font-size: 14px;
+  padding: 60px 0 20px;
+}
+
+.footer p {
+  color: #8a8a8a;
+}
+
+.footer h3 {
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.footer-col-1, .footer-col-2, .footer-col-3 {
+  min-width: 250px;
+  margin-bottom: 20px;
+}
+
+.footer-col-1 {
+  flex-basis: 30%;
+}
+
+.footer-col-1 img {
+  width: 25px;
+  background-color: white;
+}
+
+.footer-col-3 {
+  flex-basis: 12%;
+  text-align: center;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.footer hr {
+  border: none;
+  background: #b5b5b5;
+  height: 1.5px;
+  margin: 10px 0;
+}
+
+.copyright {
+  text-align: center;
+}
+
+.menu-icon {
+  width: 28px;
+  margin-left: 20px;
+  display: none;
+}
+
+
+
+
+.serv-grid i {
+  font-size: 70px;
+  padding-bottom: 5px;
+}
+
+
+
+
+/*------ media query for menu -----*/
+@media only screen and (max-width: 800px) {
+  nav ul {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    background: #333;
+    width: 100%;
+    overflow: hidden;
+    transition: max-height 0.5s;
+  }
+
+  nav ul li {
+    display: block;
+    margin-right: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  nav ul li a {
+    color: #fff;
+  }
+
+  .menu-icon {
+    display: block;
+    cursor: pointer;
+  }
+}
+
+/*---------media query for less than 600 screen size -----------*/
+@media only screen and (max-width: 600px) {
+  .row {
+    text-align: center;
+  }
+
+  .titleImg, .row-1, .col-2, .col-3, .col-4 {
+    flex-basis: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .serv-grid, .row-1, .map {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .loc1, .loc2 {
+    margin: auto;
+  }
+}
+
+
+
+/* General Dropdown Styles */
+nav ul li {
+  position: relative;
+}
+
+nav ul li .dropdown {
+  position: absolute;
+  top: 100%; 
+  left: 0;
+  background: #e0f7ff;
+  border: 1px solid #4d8ad0;
+  border-radius: 5px;
+  list-style-type: none;
+  display: none; 
+  padding: 10px 0;
+  z-index: 1000;
+  width: 200px;
+}
+
+nav ul li:hover .dropdown {
+  display: block; 
+}
+
+nav ul li .dropdown li {
+  padding: 10px 20px;
+}
+
+nav ul li .dropdown li a {
+  color: #555;
+  text-decoration: none;
+}
+
+nav ul li .dropdown li a:hover {
+  background: #4d8ad0; 
+  color: white;
+}
+
+/* Sub-Dropdown Styles */
+nav ul li .dropdown li .sub-dropdown {
+  position: absolute;
+  top: 0;
+  left: 100%; 
+  background: #e0f7ff;
+  border: 1px solid #4d8ad0;
+  border-radius: 5px;
+  display: none;
+  padding: 10px 0;
+}
+
+nav ul li .dropdown li:hover .sub-dropdown {
+  display: block; 
+}
+
+nav ul li .dropdown li .sub-dropdown li {
+  padding: 10px 20px;
+}
+
+nav ul li .dropdown li .sub-dropdown li a {
+  color: #555;
+  text-decoration: none;
+}
+
+nav ul li .dropdown li .sub-dropdown li a:hover {
+  background: #4d8ad0;
+  color: white;
+}
+
+/* Mobile-Friendly Dropdown */
+@media only screen and (max-width: 800px) {
+  nav ul {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    background: #333;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s;
+    z-index: 1000;
+  }
+
+  nav ul li {
+    display: block;
+    margin: 10px 0;
+  }
+
+  nav ul li a {
+    color: white;
+  }
+
+  nav ul li .dropdown {
+    position: relative; 
+    top: 0;
+    left: 0;
+    width: 100%; 
+    display: none; 
+  }
+
+  nav ul li .dropdown li {
+    padding: 10px 20px;
+    background: #444;
+  }
+
+  nav ul li .dropdown li a {
+    color: white;
+  }
+
+  nav ul li .dropdown li a:hover {
+    background: #4d8ad0;
+  }
+
+  nav ul li:hover .dropdown {
+    display: block; 
+  }
+
+  nav ul li .dropdown li .sub-dropdown {
+    position: relative;  
+    left: 0;
+    top: 0;
+    width: 100%; 
+    display: none;
+  }
+
+  nav ul li .dropdown li:hover .sub-dropdown {
+    display: block; 
+  }
+
+  .menu-icon {
+    display: block;
+    cursor: pointer;
+  }
+}
+
+
+
+/* Add these styles */
+.slideshow-container {
+  width: 100%;
+
+  overflow: hidden;
+  margin-top: 60px; /* Adjust based on your header height */
+  align-items: center;
+  justify-content: center;
+}
+
+.slideshow {
+  width: 80%;
+  margin: 0 auto;
+  position: relative;
+  height: 500px; /* Adjust height as needed */
+  align-items: center;
+  justify-content: center;
+}
+
+.slideshow img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.slideshow img.active {
+  opacity: 1;
+}
