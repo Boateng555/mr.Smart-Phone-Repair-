@@ -19,12 +19,8 @@ SECRET_KEY = 'django-insecure-x4m$gfeda-r+)u05g*bzm%8#_vz&8-wl^3epo45gqi#_eqwvtq
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-ALLOWED_HOSTS = [
-    'mrsmartphonerepair-gmffhmdpc0hjh4db.germanywestcentral-01.azurewebsites.net',
-    '.azurewebsites.net',  # Allow all Azure Web Apps
-    'localhost',  # For local development
-    '127.0.0.1',  # For local development
-]
+ALLOWED_HOSTS = ['mrsmartphonerepair.de', '20.218.128.171', 'localhost', '127.0.0.1']
+
 CSRF_TRUSTED_ORIGINS =[]
 INSTALLED_APPS = [
     'django.contrib.admin',
