@@ -22,6 +22,8 @@ DEBUG = True
 ALLOWED_HOSTS = [
     "mrsmartphonerepair.de",
     "20.218.128.171",
+    "127.0.0.1",
+
 ]
 
 
@@ -148,6 +150,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Add paypal settings
 # Set sandbox to true
-PAYPAL_TEST = True
 
-PAYPAL_RECEIVER_EMAIL = 'info@mrsmartphonerepair.com' # Business Sandbox account
+PAYPAL_RECEIVER_EMAIL = 'info@mrsmartphonerepair.de'
+PAYPAL_TEST = False
