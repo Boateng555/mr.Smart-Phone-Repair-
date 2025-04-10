@@ -130,6 +130,7 @@ def billing_info(request):
     })
 
 def checkout(request):
+    print("🟢 Live server is using updated PayPal settings!")
     cart = Cart(request)
     cart_products = cart.get_prods()
     quantities = cart.get_quants()
@@ -156,4 +157,4 @@ def payment_failed(request):
 
 
 
-print("🟢 Live server is using updated PayPal settings!")
+
