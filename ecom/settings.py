@@ -151,5 +151,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Add paypal settings
 # Set sandbox to true
 
-PAYPAL_RECEIVER_EMAIL = 'info@mrsmartphonerepair.de'
+PAYPAL_RECEIVER_EMAIL = 'kwameb320@gmail.com'
 PAYPAL_TEST = False
