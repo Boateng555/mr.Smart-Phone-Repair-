@@ -153,3 +153,7 @@ def payment_success(request):
 
 def payment_failed(request):
     return render(request, "payment/payment_failed.html")
+
+
+
+print("🟢 Live server is using updated PayPal settings!")
