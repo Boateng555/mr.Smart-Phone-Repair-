@@ -17,13 +17,21 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-x4m$gfeda-r+)u05g*bzm%8#_vz&8-wl^3epo45gqi#_eqwvtq'
 
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://mrsmartphonerepair.de',
+    'https://www.mrsmartphonerepair.de'
+]
+
+
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 ALLOWED_HOSTS = [
-    "mrsmartphonerepair.de",
-    "20.218.128.171",
-    "127.0.0.1",
-
+    'mrsmartphonerepair-gmffhmdpc0hjh4db.germanywestcentral-01.azurewebsites.net',
+    '.azurewebsites.net',  # Allow all Azure Web Apps
+    'localhost',  # For local development
+    '127.0.0.1',  # For local development
 ]
 
 
