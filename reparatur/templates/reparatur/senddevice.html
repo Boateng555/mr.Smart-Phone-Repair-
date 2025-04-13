@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  
+  <script src="https://kit.fontawesome.com/2ef93045ff.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="{% static 'css/index.css' %}">
   <link rel="stylesheet" href="{% static 'css/senddevice.css' %}">
 </head>
@@ -45,6 +45,36 @@
       </div>
     </div>
   </div>
+
+
+
+   <!-- Überblick-Abschnitt -->
+   <section class="overview">
+    <h1>Gerätereparatur-Service</h1>
+    <div class="steps">
+        <div class="step">
+            <h2>1. Paket versenden</h2>
+            <p>Verpacken Sie Ihr Gerät sicher und senden Sie es zur Reparatur an uns.</p>
+        </div>
+        <div class="step">
+            <h2>2. Wir reparieren</h2>
+            <p>Unsere Expertentechniker reparieren Ihr Gerät sorgfältig.</p>
+        </div>
+        <div class="step">
+            <h2>3. Wir senden es zurück</h2>
+            <p>Ihr repariertes Gerät wird sicher an Sie zurückgesendet.</p>
+        </div>
+    </div>
+    
+  </section>
+
+
+
+
+
+
+
+
 
   <!-- Überblick-Abschnitt -->
   <form id="repairForm" method="post" action="{% url 'submit_repair_request' %}">
@@ -104,42 +134,43 @@
   </form>
 
   <!------ Branches ------->
+
   <div class="branches">
-    <div class="filialen">FELIALEN</div>
+    <div class="filialen">STANDORT</div>
   
-    <div class="branch">
 
     <div class="branch">
-      <div class="locationN">STANDORT 2</div>
+      <div class="locationN">STANDORT </div>
       <div><a href="" class="address">Überseeplatz 4, <br>20457 Hmaburg</a></div>
       <div><a href="" class="phoneN">Tel: +49 40 83504418</a></div>
       <div class="timeNdays">Montag - Samstag <br>10&#58;00 bis 20&#58;00 Uhr</div>
     </div>
 
+
     <div class="map">
-      
       <div class="loc2">
         <a href="https://www.google.com/search?client=firefox-b-d&q=%C3%9Cberseeplatz+4%2C+20457+Hmaburg"><img src="{% static 'assets/Images/übersee.png'%}" width="100%"></a>
       </div>
     </div>
   </div>
 
-  <!----- footer ----->  
+
+<!----- footer ----->  
   <div class="footer">
       <div class="row">
         <div class="footer-col-1">
           <h3>Kontakt</h3>
-          <p><img src="{% static 'assets/images/icons/call.png'%}">&nbsp;&nbsp;&nbsp; +49 40 64534414</p>
-          <p><img src="{% static 'assets/images/icons/mail.png'%}">&nbsp;&nbsp;&nbsp; info@mrsmartphonerepair.de</p>
-          <p><img src="{% static 'assets/images/icons/location.png'%}">&nbsp;&nbsp;&nbsp; Berner Heerweg 173-175 
-            <br> 22159, Hamburg</p>
+          <p><i class="fa-solid fa-phone"></i>>&nbsp;&nbsp;&nbsp; +49 40 83504418</p>
+          <p><i class="fa-solid fa-envelope"></i>&nbsp;&nbsp;&nbsp;info@mrsmart-repair.com</p>
+          <p><i class="fa-solid fa-location-dot"></i>&nbsp;&nbsp;&nbsp; Überseeplatz 4
+            <br> 20457, Hamburg</p>
         </div>
         <div class="footer-col-2">
           <h3>ÜBER UNS</h3>
           <ul>
-            <li><a href="homepagelinks/Impressum.html">Impressum</a></li>
-            <li><a href="homepagelinks/AGB.html">AGB</a></li>
-            <li><a href="homepagelinks/datenschutzerklärung.html">Datenschutz</a></li>
+            <li><a href="{% url 'impressum' %}">Impressum</a></li>
+            <li><a href="{% url 'agb' %}">AGB</a></li>
+            <li><a href="{% url 'datenschutz' %}">Datenschutz</a></li>
           </ul>
         </div>
         <div class="footer-col-2">
@@ -152,8 +183,18 @@
         </div>
       </div>
       <hr>
-      <p class="copyright">&copy; 2024 Mr. Smart Repair. Alle Rechte vorbehalten.</p>
+      <p class="copyright">&copy; 2024 Mr. Smart. Alle Rechte vorbehalten.</p>
   </div>
+
+
+
+<!--------------- js for toggle menu ------------>
+
+<script src="{% static 'js/index.js' %}"></script>
+
+</body>
+</html>
+
 
   <!--------------- js for toggle menu ------------>
   <script src="{% static 'js/index.js' %}"></script>
