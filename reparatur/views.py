@@ -7,6 +7,28 @@ import logging
 
 logger = logging.getLogger(__name__)
 
+
+def reparatur(request):
+    return render(request, 'reparatur/reparatur.html')
+
+
+def repair_price(request):
+    category = request.GET.get('category', '')
+    context = {
+        'category': category,
+    }
+    return render(request, 'reparatur/repair-price.html', context)
+
+# Your send_device view
+def send_device(request):
+    return render(request, 'reparatur/senddevice.html')
+
+
+
+
+
+
+
 @csrf_exempt  # remove this if you have CSRF tokens properly setup
 def submit_repair_request(request):
     if request.method == 'POST':
@@ -34,7 +56,7 @@ def submit_repair_request(request):
             send_mail(
                 'Reparaturanfrage erhalten – Mr. Smart Repair',
                 'Danke für Ihre Anfrage. Wir melden uns bald bei Ihnen!',
-                'info@mrsmartrepair.de',  # Make sure this matches your email settings
+                'kwameb792@gmail.com',  # Make sure this matches your email settings
                 [email],
                 fail_silently=False,
             )
