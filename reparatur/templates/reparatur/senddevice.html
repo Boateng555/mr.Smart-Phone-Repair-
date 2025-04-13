@@ -18,19 +18,96 @@
   <div class="header">
     <div class="navbar">
       <div class="logo">
-        <a href="{% url 'info-home' %}"><img src="{% static 'assets/images/MrSmartRepair.JPG' %}" width="150px" height="40px"></a>
+        <a href="{% url 'info-home' %}"><img src="{% static 'assets/Images/MrSmartRepair.JPG'%}" width="150px" height="40px"></a>
       </div>
 
-      <nav>
-        <ul id="MenuItems">
-          <li><a href="{% url 'info-home' %}">HOME</a></li>
-          <li><a href="{% url 'reparatur' %}">REPARATUREN</a></li>
-          <li><a href="{% url 'send_device' %}" class="send">GERÄT EINSENDEN</a></li>
-          <li><a href="{% url 'home' %}" class="onlineS">ONLINESHOP</a></li>
-        </ul>
-      </nav>
+
+        <nav>
+            <ul id="MenuItems">
+            <li>
+                <a href="{% url 'info-home' %}">HOME</a>
+            </li>
+            <li>
+                <a href="{% url 'reparatur' %}">REPARATUREN</a>
+                <ul class="dropdown">
+                <li>
+                    <a href="#">Smartphones</a>
+                    <ul class="sub-dropdown">
+                    <li><a href="#">iPhone</a></li>
+                    <li><a href="#">Samsung</a></li>
+                    <li><a href="#">Huawei</a></li>
+                    <li><a href="#">Google Pixel</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Tablets</a>
+                    <ul class="sub-dropdown">
+                    <li><a href="#">iPad</a></li>
+                    <li><a href="#">Samsung Galaxy Tab</a></li>
+                    <li><a href="#">Microsoft Surface</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Laptops</a>
+                    <ul class="sub-dropdown">
+                    <li><a href="#">MacBook</a></li>
+                    <li><a href="#">Dell XPS</a></li>
+                    <li><a href="#">HP Spectre</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Zubehör</a>
+                    <ul class="sub-dropdown">
+                    <li><a href="#">Hüllen</a></li>
+                    <li><a href="#">Ladegeräte</a></li>
+                    <li><a href="#">Kabel</a></li>
+                    </ul>
+                </li>
+                </ul>
+            </li>
+
+
+
+            <li>
+                <a href="{% url 'send_device' %}">GERÄT EINSENDEN</a>
+                <ul class="dropdown">
+                <li>
+                    <a href="#">Smartphones</a>
+                    <ul class="sub-dropdown">
+                    <li><a href="#">iPhone</a></li>
+                    <li><a href="#">Samsung</a></li>
+                    <li><a href="#">Huawei</a></li>
+                    <li><a href="#">Google Pixel</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Tablets</a>
+                    <ul class="sub-dropdown">
+                    <li><a href="#">iPad</a></li>
+                    <li><a href="#">Samsung Galaxy Tab</a></li>
+                    <li><a href="#">Microsoft Surface</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Laptops</a>
+                    <ul class="sub-dropdown">
+                    <li><a href="#">MacBook</a></li>
+                    <li><a href="#">Dell XPS</a></li>
+                    <li><a href="#">HP Spectre</a></li>
+                    </ul>
+                </li>
+                </ul>
+            </li>
+                
+                
+                <a href="{% url 'home' %}">ONLINESHOP</a>
+            </li>
+            </ul>
+        </nav>
       
-      <img src="{% static 'assets/images/icons/menu.png' %}" class="menu-icon" onclick="menutoggle()">
+      
+      
+      <img src=" {% static 'assets/Images/icons/menu.png'%}" class="menu-icon" onclick="menutoggle()">
     </div>
   </div>
 
