@@ -5,6 +5,12 @@ from django.contrib import messages
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from .forms import SignUpForm, UpdateUserForm, ChangePasswordForm, UserInfoForm
+from django.core.management import call_command
+from django.http import HttpResponse
+
+def migrate_now(request):
+    call_command('migrate')
+    return HttpResponse("✅ Migrations done.")
 
 from payment.forms import ShippingForm
 from payment.models import ShippingAddress
@@ -185,3 +191,9 @@ def register_user(request):
 			return redirect('register')
 	else:
 		return render(request, 'register.html', {'form':form})
+	
+
+
+def migrate_now(request):
+    call_command('migrate')
+    return HttpResponse("✅ Migrations done.")

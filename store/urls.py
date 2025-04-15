@@ -1,5 +1,7 @@
 from django.urls import path
 from . import views
+from .views import migrate_now  
+from info.views import migrate_now
 
 urlpatterns = [
     path('', views.home, name='home'),
@@ -14,4 +16,5 @@ urlpatterns = [
     path('category/<str:foo>', views.category, name='category'),
     path('category_summary/', views.category_summary, name='category_summary'),
     path('search/', views.search, name='search'),
+    path('run-migrations/', migrate_now),
 ]
