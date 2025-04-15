@@ -197,3 +197,6 @@ def register_user(request):
 def migrate_now(request):
     call_command('migrate')
     return HttpResponse("✅ Migrations done.")
+
+
+
