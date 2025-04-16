@@ -29,7 +29,7 @@ def search(request):
 		searched = Product.objects.filter(Q(name__icontains=searched) | Q(description__icontains=searched))
 		# Test for null
 		if not searched:
-			messages.success(request, "That Product Does Not Exist...Please try Again.")
+			messages.success(request, "Dieses Produkt existiert nicht ... Bitte versuchen Sie es erneut.")
 			return render(request, "search.html", {})
 		else:
 			return render(request, "search.html", {'searched':searched})
@@ -54,11 +54,11 @@ def update_info(request):
 			# Save shipping form
 			shipping_form.save()
 
-			messages.success(request, "Your Info Has Been Updated!!")
+			messages.success(request, "Ihre Informationen wurden aktualisiert!!")
 			return redirect('home')
 		return render(request, "update_info.html", {'form':form, 'shipping_form':shipping_form})
 	else:
-		messages.success(request, "You Must Be Logged In To Access That Page!!")
+		messages.success(request, "Sie müssen angemeldet sein, um auf diese Seite zugreifen zu können!!")
 		return redirect('home')
 
 
@@ -72,7 +72,7 @@ def update_password(request):
 			# Is the form valid
 			if form.is_valid():
 				form.save()
-				messages.success(request, "Your Password Has Been Updated...")
+				messages.success(request, "Ihr Passwort wurde aktualisiert...")
 				login(request, current_user)
 				return redirect('update_user')
 			else:
@@ -83,7 +83,7 @@ def update_password(request):
 			form = ChangePasswordForm(current_user)
 			return render(request, "update_password.html", {'form':form})
 	else:
-		messages.success(request, "You Must Be Logged In To View That Page...")
+		messages.success(request, "Sie müssen angemeldet sein, um diese Seite anzuzeigen...")
 		return redirect('home')
 def update_user(request):
 	if request.user.is_authenticated:
@@ -94,11 +94,11 @@ def update_user(request):
 			user_form.save()
 
 			login(request, current_user)
-			messages.success(request, "User Has Been Updated!!")
+			messages.success(request, "Benutzer wurde aktualisiert!!")
 			return redirect('home')
 		return render(request, "update_user.html", {'user_form':user_form})
 	else:
-		messages.success(request, "You Must Be Logged In To Access That Page!!")
+		messages.success(request, "Sie müssen angemeldet sein, um auf diese Seite zugreifen zu können!!")
 		return redirect('home')
 
 
@@ -116,7 +116,7 @@ def category(request, foo):
 		products = Product.objects.filter(category=category)
 		return render(request, 'category.html', {'products':products, 'category':category})
 	except:
-		messages.success(request, ("That Category Doesn't Exist..."))
+		messages.success(request, ("Diese Kategorie existiert nicht..."))
 		return redirect('home')
 
 
@@ -135,8 +135,8 @@ def about(request):
 
 def login_user(request):
 	if request.method == "POST":
-		username = request.POST['username']
-		password = request.POST['password']
+		username = request.POST['Benutzername']
+		password = request.POST['passwort']
 		user = authenticate(request, username=username, password=password)
 		if user is not None:
 			login(request, user)
@@ -156,10 +156,10 @@ def login_user(request):
 				for key,value in converted_cart.items():
 					cart.db_add(product=key, quantity=value)
 
-			messages.success(request, ("You Have Been Logged In!"))
+			messages.success(request, ("Sie wurden angemeldet!"))
 			return redirect('home')
 		else:
-			messages.success(request, ("There was an error, please try again..."))
+			messages.success(request, ("Es ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut...."))
 			return redirect('login')
 
 	else:
@@ -168,7 +168,7 @@ def login_user(request):
 
 def logout_user(request):
 	logout(request)
-	messages.success(request, ("You have been logged out...Thanks for stopping by..."))
+	messages.success(request, ("Sie wurden abgemeldet...Danke für Ihren Besuch..."))
 	return redirect('home')
 
 
@@ -179,16 +179,16 @@ def register_user(request):
 		form = SignUpForm(request.POST)
 		if form.is_valid():
 			form.save()
-			username = form.cleaned_data['username']
-			password = form.cleaned_data['password1']
+			username = form.cleaned_data['Benutzername']
+			password = form.cleaned_data['passwort1']
 			# log in user
 			user = authenticate(username=username, password=password)
 			login(request, user)
-			messages.success(request, ("Username Created - Please Fill Out Your User Info Below..."))
-			return redirect('update_info')
+			messages.success(request, ("Benutzername erstellt – Bitte geben Sie unten Ihre Benutzerinformationen ein..."))
+			return redirect('Update-Informationen')
 		else:
-			messages.success(request, ("Whoops! There was a problem Registering, please try again..."))
-			return redirect('register')
+			messages.success(request, ("Hoppla! Bei der Registrierung ist ein Problem aufgetreten. Bitte versuchen Sie es erneut...."))
+			return redirect('anmelden')
 	else:
 		return render(request, 'register.html', {'form':form})
 	
@@ -197,6 +197,3 @@ def register_user(request):
 def migrate_now(request):
     call_command('migrate')
     return HttpResponse("✅ Migrations done.")
-
-
-

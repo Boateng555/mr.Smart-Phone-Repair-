@@ -6,37 +6,37 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
                 <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'info-home' %}">Home</a></li>
-                <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'search' %}">Search</a></li>
+                <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'search' %}">Suchen</a></li>
                 <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">About</a></li>
 
     {% if user.is_authenticated %}
       
 <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Profile</a>
+    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Profil</a>
     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-        <li><a class="dropdown-item" href="{% url 'update_user' %}">User Profile</a></li>
+        <li><a class="dropdown-item" href="{% url 'update_user' %}">Benutzerprofil</a></li>
         <li><hr class="dropdown-divider" /></li>
-<li><a class="dropdown-item" href="{% url 'update_info'  %}">User Info</a></li>
+<li><a class="dropdown-item" href="{% url 'update_info'  %}">Benutzerprofil</a></li>
                     </ul>
                 </li>
     {% if user.is_superuser %}
       <li class="nav-item dropdown">
     
-    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Orders</a>
+    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Bestellungen</a>
     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-        <li><a class="dropdown-item" href="{% url 'shipped_dash' %}">Shipped Orders</a></li>
+        <li><a class="dropdown-item" href="{% url 'shipped_dash' %}">Versendete Bestellungen</a></li>
         <li><hr class="dropdown-divider" /></li>
-<li><a class="dropdown-item" href="{% url 'not_shipped_dash'  %}">UnShipped Orders</a></li>
+<li><a class="dropdown-item" href="{% url 'not_shipped_dash'  %}">Nicht versandte Bestellungen</a></li>
                     </ul>
                 </li>
     {% endif %}
 
 
-       <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Logout</a></li>
+       <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Ausloggen</a></li>
     {% else %}
        <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Login</a></li>
 
-       <li class="nav-item"><a class="nav-link" href="{% url 'register' %}">Register</a></li>
+       <li class="nav-item"><a class="nav-link" href="{% url 'register' %}">anmelden</a></li>
 
     {% endif %}
 
@@ -45,12 +45,12 @@
 
 
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categories</a>
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Kategorien</a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="{% url 'category_summary' %}">Gebrauchte Handys</a></li>
+                        <li><a class="dropdown-item" href="{% url 'category_summary' %}">Alle Kategorien anzeigen</a></li>
                         <li><hr class="dropdown-divider" /></li>
 <li><a class="dropdown-item" href="{% url 'category' 'Programming-Books' %}"></a></li>
-                        <li><a class="dropdown-item" href="{% url 'category' 'Marketing-Books' %}">Weittere gebrauchte Geräte</a></li>
+                       
                     </ul>
                 </li>
             </ul>
