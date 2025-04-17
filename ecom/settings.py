@@ -16,7 +16,9 @@ ALLOWED_HOSTS = [
     'www.mrsmart-repair.com',
     'mrsmart-repair.com',
     'mr-smart-phone-repair.onrender.com',
-    'www.mr-smart-phone-repair.onrender.com',
+    'www.mr-smart-phone-repair.onrender.com',#
+    'mrsmart-repair.de',
+    'www.mrsmart-repair.de',
 ]
 
 CSRF_TRUSTED_ORIGINS = [
@@ -126,7 +128,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-PAYPAL_RECEIVER_EMAIL = 'kwameb320@gmail.com'
+PAYPAL_RECEIVER_EMAIL = 'info@mrsmart-repair.de'
 PAYPAL_TEST = False
 
 EMAIL_BACKEND = 'anymail.backends.mailgun.EmailBackend'
@@ -135,7 +137,7 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
-DEFAULT_FROM_EMAIL = 'info@mrsmart-repair.com'
+DEFAULT_FROM_EMAIL = 'info@mrsmart-repair.de'
 
 ANYMAIL = {
     "MAILGUN_API_KEY": os.getenv("MAILGUN_API_KEY"),
